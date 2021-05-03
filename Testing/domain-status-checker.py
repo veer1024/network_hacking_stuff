@@ -1,10 +1,6 @@
 import requests
 from prettytable import PrettyTable
-a = input("Path of target File: ")
-file = open(a,'r')
-Lines = file.readlines()
-count = 0
-result = list()
+import pyfiglet
 #colors
 class bcolors:
     OK = '\033[92m' #GREEN
@@ -20,6 +16,16 @@ class bcolors:
     darkgrey='\033[90m'
     lightred='\033[91m'
     pink='\033[95m'
+
+ascii_banner = pyfiglet.figlet_format("Domain Status Code Checker !!")
+print(ascii_banner)
+print(f"{bcolors.pink}Author: Viraj Vaishnav{bcolors.RESET}")
+print(f"{bcolors.pink}Follow on: https://twitter.com/VirajVaishnav16{bcolors.RESET}")
+a = input(f"{bcolors.lightred}Path of target File:{bcolors.RESET} ")
+file = open(a,'r')
+Lines = file.readlines()
+count = 0
+result = list()
 #definig class for list 
 class Domains:
    def __init__(self,domain,url,status):
@@ -45,7 +51,7 @@ for line in Lines:
                  r = s.get(url)
                  domain_data = Domains(line.strip(),url,r.status_code)
                  result.append(domain_data.taapu())
-                 print(f"{bcolors.OK}Target {count}: {line.strip()} ==>  {r.status_code}{bcolors.RESET}")
+                 print(f"{bcolors.OK}Target {count}: {line.strip()} ==>  {r.status_code}")
                  #print(domain_data.taapu())
                  r.close()
                  
@@ -54,7 +60,7 @@ for line in Lines:
                 url = 'https://'+line.strip()
                 result.append(Domains(line.strip(),url,0).taapu())
                 #print("Target {}: {} ==> {}".format(count,line.strip(),"no domain found"))
-                print(f"{bcolors.FAIL}Target {count}: {line.strip()} ==>  no domain found{bcolors.RESET}")
+                print(f"{bcolors.FAIL}Target {count}: {line.strip()} ==>  no domain found")
  
 result.sort(key=get_my_key)            # sorting
 result = list(dict.fromkeys(result))   # removing duplicating   
@@ -64,7 +70,7 @@ result = list(dict.fromkeys(result))   # removing duplicating
 # removing duplicates
 
 
-
+print(bcolors.RESET)
 table = PrettyTable(['Domain', 'URL', 'Status Code'])
 table_fail = PrettyTable(['Domain', 'URL', 'Status Code'])
 for rec in result:
