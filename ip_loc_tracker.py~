@@ -43,6 +43,27 @@ print("\t[+] Status:\t\t\t",data["status"])
 if data["status"] == "fail":
         print("\t[+] message:\t\t\t",data["message"])
 else:
+     print("\t[+] IP\t\t\t",data["query"])
+     #location based data: 
+     print("location data:")
+     print("\t[+] latitude\t\t\t",data["lat"])
+     print("\t[+] longitude\t\t\t",data["lon"])
+     print("\t[+] city\t\t\t",data["city"])
+     print("\t[+] district\t\t\t",data["district"])
+     print("\t[+] region\t\t\t",data["region"])
+     print("\t[+] regionName\t\t\t",data["regionName"])
+     print("\t[+] country\t\t\t",data["country"])
+     print("\t[+] timezone:\t\t\t",data["timezone"])
+     print("\t[+] organization_name\t\t\t",data["org"])
+     print("\t[+] ZIP code\t\t\t",data["zip"])
+     print("\t[+] COUNTRY_code\t\t\t",data["countryCode"])
+     # some other details:
+     print("some other important details:")
+     print("\t[+] ORGANIZATION\t\t\t",data["as"])
+     print("\t[+] Reverse_DNS_of_IP:\t\t\t",data["reverse"])
+     print("\t[+] Cellular\t\t\t",data["mobile"])
+     print("\t[+] VPN\t\t\t",data["proxy"])
+     print("\t[+] hosting\t\t\t",data["hosting"])
      table = PrettyTable(['info-Type', 'Value'])
      row1 = [bcolors.WARNING+"latitude"+bcolors.RESET,bcolors.lightred+str(data["lat"])+bcolors.RESET]
      row2 = [bcolors.WARNING+"longitude"+bcolors.RESET,bcolors.lightred+str(data["lon"])+bcolors.RESET]

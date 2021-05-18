@@ -31,7 +31,7 @@ def process_packet(pkt):
 #yein sniff wali line hi packet capture kr rahi hai...
 f='udp and dst portrange 9089-9091 or tcp'
 #sniff(iface="wlo1",filter='ip',prn=process_packet)
-ifac = input(f"Enter the interface (e.g. wlan0,wlo1,eth0..) : ")
+iface = input(f"Enter the interface (e.g. wlan0,wlo1,eth0..) : ")
 filter = input(f"Apply Filter(Required): ")
-sniff(iface=ifac,filter=f,prn=process_packet)
+sniff(iface=iface,filter=f,prn=process_packet)
 

@@ -19,7 +19,7 @@ class bcolors:
     lightred='\033[91m'
     pink='\033[95m'
 
-ascii_banner = pyfiglet.figlet_format("Syn Flood Attack!!")
+ascii_banner = pyfiglet.figlet_format("Syn Flood Attack !!")
 print(ascii_banner)
 print(f"{bcolors.pink}Author: Viraj Vaishnav{bcolors.RESET}")
 print(f"{bcolors.pink}Follow on: https://twitter.com/VirajVaishnav16{bcolors.RESET}")

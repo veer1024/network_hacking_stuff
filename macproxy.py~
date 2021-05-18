@@ -31,7 +31,7 @@ print(f"{bcolors.pink}Follow on: https://twitter.com/VirajVaishnav16{bcolors.RES
 def run():
      print(f"{bcolors.pink}what you want...{bcolors.RESET}")
      print(f"{bcolors.pink}1. check my mac.{bcolors.RESET}"+" "*18 + f"{bcolors.pink}2. change my mac.{bcolors.RESET}")
-     option = input(f"{bcolors.pink}select option (1 0r 2): {bcolors.RESET}")
+     option = input("{bcolors.pink}select option (1 0r 2): {bcolors.RESET}")
      if option == "1":
         iface = input(f"{bcolors.pink}which network card interface you want to check: {bcolors.RESET}{bcolors.lightred}")
         print(f"{bcolors.RESET}")
