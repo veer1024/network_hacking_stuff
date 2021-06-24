@@ -104,6 +104,9 @@ for rec in result:
               table_fail.add_row(row)
     
 print(table)
+f = open("SubStatus-"+a, "a")
+f.write(str(table)+"\n")
+f.close()
 print(table_fail)
 #print(list200)
 #print(list302)
